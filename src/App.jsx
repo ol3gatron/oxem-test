@@ -52,7 +52,7 @@ function App() {
     setLoading(true)
 
     setTimeout(() => {
-      axios.post("https://eoj3r7f3r4ef6v4.m.pipedream.net/posts", {
+      axios.post("https://eoj3r7f3r4ef6v4.m.pipedream.net/", {
         ...formData,
         monthlyPay,
         totalSum
@@ -69,8 +69,8 @@ function App() {
 
   return (
     <form className="App" onSubmit={handleSubmit}>
-      <h1 className="app--title">Рассчитайте стоимость <br /> автомобиля в лизинг</h1>
-      <div className="app--inputs">
+      <h1 className="app-title">Рассчитайте стоимость <br /> автомобиля в лизинг</h1>
+      <div className="app-inputs">
         <InputSlider
           title={"Стоимость автомобиля"}
           min={1000000}
@@ -105,7 +105,7 @@ function App() {
           <div className="input--title">
             Сумма договора лизинга
           </div>
-          <div className="app-total--sum-num">
+          <div className="app-total--sum-value">
             {totalSum.toLocaleString()}₽
           </div>
         </div>
@@ -113,7 +113,7 @@ function App() {
           <div className="input--title">
             Ежемесячный платеж от
           </div>
-          <div className="app-total--monthly-pay-num">
+          <div className="app-total--monthly-pay-value">
             {monthlyPay.toLocaleString()}₽
           </div>
         </div>

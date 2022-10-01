@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
 const InputSlider = ({title, min, max, name, value, valueIn, carPrice, handleChange}) => {
@@ -6,7 +5,7 @@ const InputSlider = ({title, min, max, name, value, valueIn, carPrice, handleCha
   const initialFee = carPrice / 100 * value
 
   return (
-    <div className="input">
+    <div className="app-inputs--input">
       <div className="input--title">{title}</div>
       <div className="input--slider">
         <div className="car-price">
@@ -22,12 +21,12 @@ const InputSlider = ({title, min, max, name, value, valueIn, carPrice, handleCha
                 name={name}
                 onChange={(e) => handleChange(e)}
               />
-              <p className="valueIn">{valueIn}</p>
+              <p className="car-price--value-in">{valueIn}</p>
             </>
             :
             <>
-            <p className='initialFeeValue'>{initialFee.toLocaleString()}</p>
-            <div className='initial-fee'>
+            <p className='car-price--value'>{initialFee.toLocaleString()}</p>
+            <div className='car-price--initial-fee'>
               <input
                 type="number"
                 value={value}
@@ -35,7 +34,9 @@ const InputSlider = ({title, min, max, name, value, valueIn, carPrice, handleCha
                 max={max}
                 name={name}
                 onChange={(e) => handleChange(e)}
-                className='initialFeeValuePercent'/> %
+                className='initial-fee--input'
+              />
+                <p className='initial-fee--percent-sign'>%</p>
             </div>
             </>
           }
@@ -48,11 +49,11 @@ const InputSlider = ({title, min, max, name, value, valueIn, carPrice, handleCha
             max={max}
             name={name}
             sx={{
-            position: "absolute",
-            width: "80%",
-            bottom: -13,
-            left: 40,
-            color: "#FF9514",
+              position: "absolute",
+              width: "80%",
+              bottom: -13,
+              left: 40,
+              color: "#FF9514",
             }}
             onChange={(e) => handleChange(e)}
           />
