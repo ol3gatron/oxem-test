@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useState } from 'react';
-import SliderInput from './components/SliderInput';
 import InputSlider from './components/InputSlider';
 import ClipLoader from "react-spinners/ClipLoader"
 
@@ -14,13 +13,29 @@ function App() {
     }
   )
 
+  const formValidate = (e) => {
+    if (e.target.name === "carPrice" && !e.target.value) {
+      return 1000000
+    } else if (e.target.name === "carPrice") {
+      return e.target.value
+    } else if (e.target.name === "initialFee" && !e.target.value) {
+      return 10
+    } else if (e.target.name === "initialFee") {
+      return e.target.value
+    } else if (e.target.name === "leasingTerm" && !e.target.value) {
+      return 1
+    } else if (e.target.name === "leasingTerm") {
+      return e.target.value
+    }
+  }
+
   const [loading, setLoading] = useState(false)
 
   function handleChange(e) {
     setFormData(prevFormData => {
         return {
             ...prevFormData,
-            [e.target.name]: e.target.value
+            [e.target.name]: formValidate(e)
         }
     })
   }
@@ -37,7 +52,7 @@ function App() {
     setLoading(true)
 
     setTimeout(() => {
-      axios.post("https://eoj3r7f3r4ef6v4.m.pipedream.net/", {
+      axios.post("https://eoj3r7f3r4ef6v4.m.pipedream.net/posts", {
         ...formData,
         monthlyPay,
         totalSum
