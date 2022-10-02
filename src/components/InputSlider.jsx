@@ -4,6 +4,9 @@ const InputSlider = ({title, min, max, name, value, valueIn, carPrice, handleCha
 
   const initialFee = carPrice / 100 * value
   const initialFeeRounded = Math.ceil(initialFee)
+  const windowWidth = window.innerWidth
+
+  console.log(window.innerWidth)
 
   return (
     <div className="app-inputs--input">
@@ -62,7 +65,7 @@ const InputSlider = ({title, min, max, name, value, valueIn, carPrice, handleCha
               sx={{
                 color: "#FF9514",
                 position: "absolute",
-                marginTop: "55px",
+                marginTop: windowWidth > 765 ? "55px" : "50px",
                 width: "80%",
               }}
             />
