@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import InputSlider from './components/InputSlider';
 import ClipLoader from "react-spinners/ClipLoader"
-
+import Slider from '@mui/material/Slider';
 
 function App() {
 

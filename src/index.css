@@ -42,11 +42,39 @@
   margin: 0;
 }
 
+.input--inputs {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 430px;
+  height: 90px;
+  padding: 10px 0;
+}
+
+.inputs--num-input {
+  border: none;
+  border-radius: 16px;
+  color: #575757;
+  background-color: #F3F3F4;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-family: "Nekst-Black";
+  padding: 5px 20px;
+}
+
+.inputs--num-input:focus-visible {
+  border: none;
+  border: 2px solid #F3F3F4;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 50px;
+  padding: 45px;
   gap: 50px;
 }
 
@@ -106,8 +134,11 @@
 .car-price--value-in {
   position: absolute;
   right: 0;
-  padding: 20px;
+  padding: 15px 25px;
   color: #575757;
+  font-family: "Nekst-Black";
+  font-size: 30px;
+  line-height: 36px;
 }
 
 .car-price--value {
@@ -117,14 +148,14 @@
 }
 
 .car-price--initial-fee {
-  padding: 0.5rem;
+  padding: 0 5px;
   margin: 0.5rem;
-  padding-right: -10px;
   border-radius: 1rem;
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  right: 0;
 }
 
 .initial-fee--input {
@@ -145,6 +176,7 @@
   font-size: 20px;
   left: 50px;
   color: #575757;
+  font-family: "Nekst-Black";
 }
 
 .app-total {
@@ -214,7 +246,7 @@ input:focus-visible {
     gap: 30px;
   }
 
-  .car-price {
+  .input--inputs {
     width: auto;
   }
 
@@ -231,7 +263,7 @@ input:focus-visible {
 
 @media (max-width: 1024px) {
   .app-total {
-    column-gap: 100px;
+    column-gap: 40px;
     row-gap: 34px;
   }
 }
@@ -251,17 +283,19 @@ input:focus-visible {
     color: #333E48;
   }
 
-  .car-price {
+  .input--inputs {
     font-size: 22px;
     color: #333E48;
   }
 
-  .car-price--input, .car-price--value {
+  .app-inputs--input, .inputs--num-input {
     color: #333E48;
+    font-size: 22px;
   }
 
   .car-price--value-in {
-    color: #333E48
+    color: #333E48;
+    font-size: 22px;
   }
 
   .initial-fee--input, .initial-fee--percent-sign {
