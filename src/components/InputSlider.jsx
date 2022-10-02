@@ -62,7 +62,7 @@ const InputSlider = ({title, min, max, name, value, valueIn, carPrice, handleCha
               sx={{
                 color: "#FF9514",
                 position: "absolute",
-                marginTop: "55px",
+                marginTop: "50px",
                 width: "80%",
               }}
             />
